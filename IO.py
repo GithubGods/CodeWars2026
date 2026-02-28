@@ -24,5 +24,5 @@ def restart():
         if "prob" in file and ".py" in file: os.remove(os.getcwd() + "\\" + file)
         
 
-#create()
-restart()
+create()
+#restart()
