@@ -9,4 +9,4 @@ def convertbase(string, bStart, bFinal):
     return result
 
 if __name__ == "__main__":
-    print(convertbase("14", 10, 2))
+    print(convertbase("code", 36, 35))

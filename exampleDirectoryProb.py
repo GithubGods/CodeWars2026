@@ -9,8 +9,11 @@ startTime = datetime.strptime(start, "%Y-%m-%d")
 endTime = datetime.strptime(end, "%Y-%m-%d")
 
 #Just files for prob
-files = os.listdir("exampleFiles")
-#Ok, uhh lets see an HPE example sometime
+dirPath = "exampleFiles"
+# if you need a subdirectory (folder) then use \\ to get it
+# ex: files\\problem01 for Windows, files/problem01 for Linux and Mac
+files = os.listdir(dirPath)
+
 
 transactions = []
 total = 0
@@ -20,7 +23,7 @@ for file in files:
 
     if startTime <= fileTime <= endTime:
         #just files
-        filePath = os.path.join("exampleFiles", file)
+        filePath = os.path.join(dirPath, file)
 
         with open(filePath) as f:
             lines = f.read().strip().split("\n")
@@ -33,6 +36,6 @@ for file in files:
                 total += float(dataOut)
 
 for transaction in sorted(transactions):
-    print(transaction)
+    pass#print(transaction)
 
-print(f"Funds Found: {total}")
+print(f"Funds Found: {round(total,2)}")

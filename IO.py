@@ -19,8 +19,8 @@ def restart():
         if Path(__file__.split("\\")[-1])==Path(file): continue
         if file in [".git", ".gitattributes", "prob_checker.py", 
             "exampleDirectoryProb.py"]: continue
-        if "prob" not in file and ".py" not in file: continue
-        os.remove(os.getcwd() + "\\" + file)
+        if "prob" in file and ".py" in file: os.remove(os.getcwd() + "\\" + file)
+        
 
-create()
-#restart()
+#create()
+restart()

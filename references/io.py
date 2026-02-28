@@ -7,6 +7,7 @@ with open("input.txt") as f:
 #For directory based problems:
 import os
 files = os.listdir("files")
+#Subdirectory accessed with \\ on Windows, / on Linux and Mac
 
 #Loop through the files in the directory, add logic as necessary
 for file_name in files:
