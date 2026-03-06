@@ -15,24 +15,22 @@ def shortestdistance(grid, startChar = "S", endChar = "X", specList = ["#"], dia
         count+=1
         changes = nonDiagChange
         if diag: changes = diagChange
-        end = False
         nextTimelines = []
-        for index, timeline in enumerate(timelines):
+        for timeline in timelines:
             for dr, dc in changes:
-                #print(timelines)
-                #print(timeline[-1])
                 nextR = timeline[-1][0]+dr
                 nextC = timeline[-1][1]+dc
                 if nextR == H or nextR < 0 or nextC == W or nextC < 0: continue
                 
-                #print(timeline + [[nextR, nextC]])
-                if [nextR,nextC] == endPos: return (timeline)
-                #posLists.remove(posList)
+                if [nextR,nextC] == endPos: return timeline + [[nextR,nextC]]
+                # Or make a list of all the shortest paths.
+
                 if not isBlackList and grid[nextR][nextC] not in specList and not [nextR,nextC] in timeline:
                     nextTimelines.append(timeline + [[nextR,nextC]])
                 if isBlackList and grid[nextR][nextC] not in specList and not [nextR,nextC] in timeline:
                     nextTimelines.append(timeline + [[nextR,nextC]])
         timelines = nextTimelines
 
-griddy = [["X", "#", "S"], [".", "#", "."], [".", ".", "."]]
-print(shortestdistance(griddy))
+if __name__ == "__main__":
+    griddy = [["X", "#", "S"], [".", "#", "."], [".", ".", "."]]
+    print(shortestdistance(griddy))
