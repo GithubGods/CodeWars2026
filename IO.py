@@ -1,16 +1,16 @@
 from pathlib import Path
 import os
 
-starterCode = "with open(\"input.txt\", \"r\") as f:\n\tINPUT = f.read().split(\"\\n\")"
+starterCode = "with open(\"input.txt\", \"r\") as f:\n\tINPUT = f.read().strip().split(\"\\n\")"
 
 def create(probCount = 30):
     for i in range(probCount):
-        if i < 10:
-            file = Path("prob0" + str(i) + ".py")
+        if i+1 < 10:
+            file = Path("prob0" + str(i+1) + ".py")
             file.parent.mkdir(parents=True, exist_ok=True)
             file.write_text(starterCode)
         else:
-            file = Path("prob" + str(i) + ".py")
+            file = Path("prob" + str(i+1) + ".py")
             file.parent.mkdir(parents=True, exist_ok=True)
             file.write_text(starterCode)
 

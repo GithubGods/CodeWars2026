@@ -1,2 +1,2 @@
 with open("input.txt", "r") as f:
-	INPUT = f.read().split("\n")
+	INPUT = f.read().strip().split("\n")
