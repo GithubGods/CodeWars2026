@@ -1,2 +1,4 @@
 with open("input.txt", "r") as f:
-	INPUT = f.read().split("\n")
+	INPUT = f.read()
+
+print(f"Meme fixed? {INPUT}, Bet!")
